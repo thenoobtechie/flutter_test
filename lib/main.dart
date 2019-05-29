@@ -5,8 +5,12 @@ var bottomNavBarItems = List<BottomNavigationBarItem>();
 void main() {
   addIconsToBNB();
 
-  var myApp = runApp(
-    MaterialApp(
+  runApp(MyApp().getMyAppState());
+}
+
+class MyApp extends MaterialApp {
+  MaterialApp getMyAppState() {
+    return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('My First App Bar'),
@@ -28,8 +32,8 @@ void main() {
           child: Icon(Icons.account_circle),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 void addIconsToBNB() {
